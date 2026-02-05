@@ -5,8 +5,8 @@ import * as THREE from "three";
 import { Leva, LevaPanel, useControls } from "leva";
 
 const Box = () => {
-  const ref = useRef();
-  useHelper(ref, THREE.BoxHelper, "red");
+  const ref = useRef<THREE.Mesh>(null);
+  useHelper(ref as React.RefObject<THREE.Mesh>, THREE.BoxHelper, "red");
 
   const { position } = useControls({
     position: {
